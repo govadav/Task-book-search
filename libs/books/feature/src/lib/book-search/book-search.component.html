@@ -1,11 +1,11 @@
-<form [formGroup]="searchForm" (submit)="searchBooks()">
+<form [formGroup]="searchForm" >
   <mat-form-field floatLabel="never">
     <input
       autoFocus
       matInput
       type="search"
       placeholder="Search for books to add to your reading list"
-      formControlName="term"
+      formControlName="term" 
     />
     <button mat-icon-button matSuffix aria-label="search">
       <mat-icon>search</mat-icon>
@@ -21,7 +21,7 @@
       </div>
       <div class="book--content">
         <div class="book--content--cover">
-          <img src="{{ b.coverUrl }}" />
+          <img src="{{ b.coverUrl }}" alt = "Book Image"/>
         </div>
         <div class="book--content--info">
           <div><strong>Author:</strong> {{ b.authors.join(',') }}</div>
@@ -30,7 +30,7 @@
             <strong>Published:</strong> {{ formatDate(b.publishedDate) }}
           </div>
           <p [innerHTML]="b.description"></p>
-         
+        
             <button
               mat-flat-button
               type="button"
@@ -48,7 +48,7 @@
 </ng-container>
 <ng-template #empty>
   <div class="empty">
-    <p>
+    <p >
       Try searching for a topic, for example "<a tabindex = "0" href= "#" type= "button" (click)="searchExample()"
         >JavaScript</a
       >".

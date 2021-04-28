@@ -64,3 +64,6 @@ I did the code review for the book search project shared with me and focused mor
 
 
 
+## 5. Adding instant search
+    
+    Updated the code to provide instant-search results as the user is typing, controlled the API calls made with setTimeout(). Wrote test case apps/okreads-e2e/src/specs/search-books.spec.ts
