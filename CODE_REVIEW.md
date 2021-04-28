@@ -12,11 +12,14 @@ I did the code review for the book search project shared with me and focused mor
 
 
 
-    •	Tests cases failed for the ‘failedAddToReadingList should undo book addition to the state’ and ‘failedRemoveFromReadingList should undo book removal from the state’ because action types called failedAddToReadingList and failedRemoveFromReadingList were not handled in readingListReducer reducer. 
+    •	Tests cases failed for the ‘failedAddToReadingList should undo book addition to the state’ and ‘failedRemoveFromReadingList should undo book 
+    removal from the state’ because action types called failedAddToReadingList and failedRemoveFromReadingList were not handled in readingListReducer reducer. 
 
-    •	In the reading-list effects file, error handling was not effective. Actions were dispatched when error occurred, but no handling cases for those actions in the readingListReducer. 
+    •	In the reading-list effects file, error handling was not effective. Actions were dispatched when error occurred, but no handling cases for those 
+    actions in the readingListReducer. 
 
-    •	No alerts to the user when error occurs with the search term. For example if we type anything wrong or if we didn’t find the book we wanted, app is not showing up any notifications to the users
+    •	No alerts to the user when error occurs with the search term. For example if we type anything wrong or if we didn’t find the book we wanted, 
+    app is not showing up any notifications to the users
 
     •	For delayed http calls, we can show the wait time with spinner for better user experience.
 
@@ -34,7 +37,8 @@ I did the code review for the book search project shared with me and focused mor
 
     •	Buttons do not have an accessible name: Fixed this by adding ‘aria-label="search"’ attribute to the search icon button
 
-    •	Background and foreground colors do not have a sufficient contrast ratio: Modified font color to black to meet color contrast (we can change to any color which follows color contrast rules based on organization banding)
+    •	Background and foreground colors do not have a sufficient contrast ratio: Modified font color to black to meet color contrast 
+    (we can change to any color which follows color contrast rules based on organization banding)
 
 
 
@@ -56,9 +60,11 @@ I did the code review for the book search project shared with me and focused mor
 
 ## 4.	Testing:
 
-    •	Run lint, unit tests, and e2e tests: All the unit tests were passed, except for reading - list reducer. I fixed failed test cases for failedAddToReadingList should undo book addition to the state’ and ‘failedRemoveFromReadingList should undo book removal from the state’. 
+    •	Run lint, unit tests, and e2e tests: All the unit tests were passed, except for reading - list reducer. I fixed failed test cases for 
+    'failedAddToReadingList should undo book addition to the state’ and ‘failedRemoveFromReadingList should undo book removal from the state’. 
 
-    •	Above mentioned two test cases were unhandled action types in reducer so reducer should return default state. Written a test case for this scenario and all tests passed.
+    •	Above mentioned two test cases were unhandled action types in reducer so reducer should return default state. 
+    Written a test case for this scenario and all tests passed.
 
     •	Written unit test cases for the actions dispatched for the components: book- search and reading-list
 
@@ -66,4 +72,5 @@ I did the code review for the book search project shared with me and focused mor
 
 ## 5. Adding instant search
     
-    Updated the code to provide instant-search results as the user is typing, controlled the API calls made with setTimeout(). Wrote test case apps/okreads-e2e/src/specs/search-books.spec.ts
+    Updated the code to provide instant-search results as the user is typing, controlled the API calls made with setTimeout(). 
+    Wrote test case apps/okreads-e2e/src/specs/search-books.spec.ts
