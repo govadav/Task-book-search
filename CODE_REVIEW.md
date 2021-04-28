@@ -4,11 +4,11 @@ I did the code review for the book search project shared with me and focused mor
 
 
 
-1.	Write a short code review based on the existing code.
+## 1.	Write a short code review based on the existing code.
 
     I noticed following problems with the code by running these commands:
 
-    1.npx nx test books-data-access: 
+    ## 1.npx nx test books-data-access: 
 
 
 
@@ -24,12 +24,14 @@ I did the code review for the book search project shared with me and focused mor
 
 
 
-    2.npx nx test books-feature – All the tests are passed for components (book-search, reading-list and total count) and books feature module.
+    ## 2.npx nx test books-feature – 
+    All the tests are passed for components (book-search, reading-list and total count) and books feature module.
 
 
 
 
-2.	Accessibility: Issues noticed by Light house extension
+## 2.	Accessibility: Issues noticed by Light house extension
+
     •	Buttons do not have an accessible name: Fixed this by adding ‘aria-label="search"’ attribute to the search icon button
 
     •	Background and foreground colors do not have a sufficient contrast ratio: Modified font color to black to meet color contrast (we can change to any color which follows color contrast rules based on organization banding)
@@ -38,7 +40,7 @@ I did the code review for the book search project shared with me and focused mor
 
 
 
-3.	 Manual check:
+## 3.	 Manual check:
 
     •	The page should have a logical tab order, so I removed unnecessary divs wrapped around ‘Reading list’ and ‘Want to Read’ button.
 
@@ -52,7 +54,7 @@ I did the code review for the book search project shared with me and focused mor
 
 
 
-4.	Testing:
+## 4.	Testing:
 
     •	Run lint, unit tests, and e2e tests: All the unit tests were passed, except for reading - list reducer. I fixed failed test cases for failedAddToReadingList should undo book addition to the state’ and ‘failedRemoveFromReadingList should undo book removal from the state’. 
 
