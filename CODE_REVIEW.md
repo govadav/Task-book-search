@@ -23,7 +23,7 @@ I noticed following problems with the code by running these commands:
 
 
 
-## npx nx test books-feature – 
+## npx nx test books-feature
 All the tests are passed for components (book-search, reading-list and total count) and books feature module.
 
 
