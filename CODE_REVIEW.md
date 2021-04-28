@@ -50,7 +50,7 @@ I did the code review for the book search project shared with me and focused mor
 
     •	Added alt attribute for image tag in reading - list and book-search components and removed unnecessary div’s around image in read – list component.
 
-    •	Added focus pseudo style for the button to highlight while pressinng tab on key board
+    •	Added focus pseudo style for the button to highlight while pressing tab on key board
 
 
 
