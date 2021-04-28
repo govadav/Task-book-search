@@ -7,7 +7,7 @@
       placeholder="Search for books to add to your reading list"
       formControlName="term"
     />
-    <button mat-icon-button matSuffix>
+    <button mat-icon-button matSuffix aria-label="search">
       <mat-icon>search</mat-icon>
     </button>
   </mat-form-field>
@@ -30,16 +30,17 @@
             <strong>Published:</strong> {{ formatDate(b.publishedDate) }}
           </div>
           <p [innerHTML]="b.description"></p>
-          <div>
+         
             <button
               mat-flat-button
+              type="button"
               color="primary"
               (click)="addBookToReadingList(b)"
               [disabled]="b.isAdded"
             >
               Want to Read
             </button>
-          </div>
+          
         </div>
       </div>
     </div>
@@ -48,7 +49,7 @@
 <ng-template #empty>
   <div class="empty">
     <p>
-      Try searching for a topic, for example "<a (click)="searchExample()"
+      Try searching for a topic, for example "<a tabindex = "0" href= "#" type= "button" (click)="searchExample()"
         >JavaScript</a
       >".
     </p>

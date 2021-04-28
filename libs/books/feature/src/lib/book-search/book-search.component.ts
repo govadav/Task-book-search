@@ -23,7 +23,7 @@ export class BookSearchComponent implements OnInit {
   });
 
   constructor(
-    private readonly store: Store,
+    public readonly store: Store,
     private readonly fb: FormBuilder
   ) {}
 

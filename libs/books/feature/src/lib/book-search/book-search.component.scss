@@ -4,6 +4,10 @@ form {
   margin-bottom: $spacing-xs;
 }
 
+button:focus{
+  border: 5px solid $black;
+}
+
 .mat-form-field {
   width: 100%;
 }
@@ -37,6 +41,7 @@ form {
   margin-right: $spacing-xxs;
 }
 
+
 .book--content--info {
   flex: 1;
   display: flex;
@@ -68,5 +73,5 @@ form {
   justify-content: center;
   min-height: 50vh;
   font-size: 1.5rem;
-  color: $gray40;
+  color: $black;
 }

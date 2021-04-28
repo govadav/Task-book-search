@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "paths": {
+      "@sct/shared/styles": [
+        "libs/shared/styles/src/index.ts"
+      ],
+      "@sct/shared/models": [
+        "libs/shared/models/src/index.ts"
+      ],
+      "@sct/books/feature": [
+        "libs/books/feature/src/index.ts"
+      ],
+      "@sct/books/data-access": [
+        "libs/books/data-access/src/index.ts"
+      ],
+      "@sct/shared/storage": [
+        "libs/shared/storage/src/index.ts"
+      ],
+      "@sct/shared/testing": [
+        "libs/shared/testing/src/index.ts"
+      ],
+      "@sct/api/books": [
+        "libs/api/books/src/index.ts"
+      ]
+    }
+  },
+  "extends": "../../../../apps/okreads/api/tsconfig.app.json"
+}
