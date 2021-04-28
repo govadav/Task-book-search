@@ -10,7 +10,7 @@ import { getReadingList, removeFromReadingList } from '@sct/books/data-access';
 export class ReadingListComponent {
   readingList$ = this.store.select(getReadingList);
 
-  constructor(private readonly store: Store) {}
+  constructor( public readonly store: Store) {}
 
   removeFromReadingList(item) {
     this.store.dispatch(removeFromReadingList({ item }));

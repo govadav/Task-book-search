@@ -5,14 +5,17 @@ import { SharedTestingModule } from '@sct/shared/testing';
 import { BooksFeatureModule } from '../books-feature.module';
 import { BookSearchComponent } from './book-search.component';
 
+
 describe('ProductsListComponent', () => {
   let component: BookSearchComponent;
   let fixture: ComponentFixture<BookSearchComponent>;
+  
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [BooksFeatureModule, NoopAnimationsModule, SharedTestingModule]
     }).compileComponents();
+    
   }));
 
   beforeEach(() => {
@@ -24,4 +27,13 @@ describe('ProductsListComponent', () => {
   it('should create', () => {
     expect(component).toBeDefined();
   });
+
+  it('should dispatch action to addbooks to reading list', () => {
+    const storeSpy = spyOn(component.store, 'dispatch').and.callThrough();
+    component.addBookToReadingList(component.books[0]);
+    fixture.detectChanges();
+    expect(storeSpy).toHaveBeenCalledTimes(1);
+  });
 });
+
+
