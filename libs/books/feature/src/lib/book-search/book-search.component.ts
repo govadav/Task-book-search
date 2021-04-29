@@ -17,7 +17,7 @@ import { Book } from '@sct/shared/models';
 })
 export class BookSearchComponent implements OnInit {
   books: ReadingListBook[];
-
+  
   searchForm = this.fb.group({
     term: ''
   });
@@ -35,6 +35,15 @@ export class BookSearchComponent implements OnInit {
     this.store.select(getAllBooks).subscribe(books => {
       this.books = books;
     });
+     
+    this.searchForm.get('term').valueChanges.subscribe(value => {
+      setTimeout(() => {
+        this.searchBooks(value);
+      }, 500);
+        
+      
+    });
+
   }
 
   formatDate(date: void | string) {
@@ -48,15 +57,18 @@ export class BookSearchComponent implements OnInit {
   }
 
   searchExample() {
-    this.searchForm.controls.term.setValue('javascript');
-    this.searchBooks();
+   
+    this.searchBooks(this.searchForm.controls.term.setValue('javascript'));
   }
 
-  searchBooks() {
-    if (this.searchForm.value.term) {
-      this.store.dispatch(searchBooks({ term: this.searchTerm }));
-    } else {
-      this.store.dispatch(clearSearch());
+  searchBooks(value){
+  
+    if (value) {
+        this.store.dispatch(searchBooks({ term: this.searchTerm }));
+      } else {
+        this.store.dispatch(clearSearch());
+      }
     }
-  }
+  
+  
 }
